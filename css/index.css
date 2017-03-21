@@ -92,3 +92,9 @@ div.noimage {
     display: inline-block;
 }
 
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+

@@ -12,16 +12,23 @@ $('form').submit(function(event) {
         
         var index;
         var resultsnumber = data.total_results;
+        var resultspages = data.total_pages;
+        
+        if (resultspages > 1) {
+            console.log(resultspages)
+        };
+        console.log(data);
 
         $("#results").empty();
 
         for (index = 0; index < resultsnumber; ++index) {
 
             if (data.results[index].poster_path == null) {
-                $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='noimage'></div></li>");
+                $("#results").append("<li><h2>"+data.results[index].title+"</h2><img src='images/film-icon.jpg'></li>");
             } else {
                 $("#results").append("<li><h2>"+data.results[index].title+"</h2><img src=http://image.tmdb.org/t/p/w185/"+data.results[index].poster_path+"></li>");
-            }}
+            }
+        }
 
         }, "json" );
     });
