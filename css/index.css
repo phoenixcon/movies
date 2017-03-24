@@ -92,9 +92,92 @@ div.noimage {
     display: inline-block;
 }
 
+/* ----- End Custom Styles----- */
+
+/* ----- Media Queries ----- */
+
+@media only screen and (max-device-width: 1500px){
+    /* styles for browsers smaller than 1300px; */
+    #results {
+        width: 60%;
+    }
+
+}
+
+@media only screen and (max-device-width: 1300px){
+    /* styles for browsers smaller than 1300px; */
+    #results {
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-device-width: 1100px){
+    /* styles for browsers smaller than 1100px; */
+    #results {
+        width: 75%;
+    }
+
+    #results li {
+        width: 32%;
+        text-align: center;
+        margin-right: 1%;
+        margin-bottom: 40px;
+    }
+
+    #results li:nth-child(4n) {
+        margin-right: 1%;
+    }
+    
+    #results li:nth-child(3n) {
+        margin-right: 0;
+    }
+
+}
+
+@media only screen and (max-device-width: 800px){
+    /* styles for browsers smaller than 800px; */
+    
+    #results {
+        width: 80%;
+    }
+
+    #results li {
+        width: 49.5%;
+        margin-bottom: 40px;
+    }
+    
+    #results li:nth-child(3n) {
+        margin-right: 1%;
+    }
+    
+    #results li:nth-child(2n) {
+        margin-right: 0;
+    }
+    
+
+}
+
+@media only screen and (max-device-width: 550px){
+    /* styles for browsers smaller than 800px; */
+    
+    #results {
+        width: 90%;
+    }
+
+    #results li {
+        width: 100%;
+        margin-bottom: 40px;
+        margin-right: 0;
+    }
+    
+}
+
+/* ----- End Media Queries ----- */
+
 .group:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
