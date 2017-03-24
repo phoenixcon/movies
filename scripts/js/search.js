@@ -15,8 +15,8 @@ $( document ).ready(function() {
             
             $("#results").empty();
 
-            console.log(apicomplete);
-            console.log(data);
+            //console.log(apicomplete);
+            //console.log(data);
 
             var resultspages = data.total_pages;
             var resultsnumber;
@@ -91,70 +91,3 @@ $( document ).ready(function() {
     });
 
 });
-
-
-
-
-
-/*$('form').submit(function(event) {
-
-    event.preventDefault();
-
-    var mykey = config.themoviedb;
-    var movietitle = document.getElementById('search').value;
-    var baseapiurl = 'https://api.themoviedb.org/3/search/movie?language=en-US&include_adult=false&api_key='+mykey+'&page=';
-    var apisearch = '&query='+movietitle;
-    var pagenum = 1;
-    var apiurl = baseapiurl+pagenum+apisearch;
-
-    $.get( apiurl, function( data1 ) {
-
-        console.log(apiurl);
-        console.log(data1);
-
-        var resultspages = data1.total_pages;
-
-        $("#results").empty();
-
-        if (resultspages > 1) {
-
-            for (pageindex = 1; pageindex <= resultspages; ++pageindex) {
-
-                var apiurl = baseapiurl+pageindex+apisearch
-
-                $.get( apiurl, function( data2 ) {
-
-                    var resultsnumber = data2.total_results;
-                    console.log(apiurl);
-                    console.log(data2);
-
-                    for (index = 0; index < resultsnumber ; ++index) {
-
-                        console.log(index);
-                        console.log(data2.results[index]);
-
-                        if (data2.results[index].poster_path == null) {
-                            $("#results").append("<li><h2>"+data2.results[index].title+"</h2><img src='images/film-icon.jpg'></li>");
-                        } else {
-                            $("#results").append("<li><h2>"+data2.results[index].title+"</h2><img src=http://image.tmdb.org/t/p/w185/"+data2.results[index].poster_path+"></li>");
-                        }
-                    }
-
-                });
-            }
-
-        } else {
-
-            for (index = 0; index < resultsnumber; ++index) {
-
-                if (data.results[index].poster_path == null) {
-                    $("#results").append("<li><h2>"+data.results[index].title+"</h2><img src='images/film-icon.jpg'></li>");
-                } else {
-                    $("#results").append("<li><h2>"+data.results[index].title+"</h2><img src=http://image.tmdb.org/t/p/w185/"+data.results[index].poster_path+"></li>");
-                }
-            }
-
-        };
-
-    }, "json" );
-});*/
