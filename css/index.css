@@ -89,7 +89,7 @@ form #search:active, form #search:focus {
 }
 
 form #submit {
-    background-color: rgba(232,232,232,0.7);
+    background-color: rgba(232,232,232,0.9);
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
@@ -99,7 +99,7 @@ form #submit {
 }
 
 form #submit:hover {
-    background-color: rgba(232,232,232,0.9);   
+    background-color: rgba(232,232,232,0.7);   
 }
 
 #results {
