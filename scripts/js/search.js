@@ -37,12 +37,12 @@ $( document ).ready(function() {
                     //IF THERE IS NO POSTER
                     if ( data.results[index].poster_path == null ) {
 
-                        $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='movieinfo'><img src='images/film-icon.jpg'><span class='overview'>"+data.results[index].overview+"</span><div class='moviebuttons'><span>Add to Coming Soon</span></div></div></li>");
+                        $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='movieinfo'><img src='images/film-icon.jpg'><span class='overview'>"+data.results[index].overview+"</span><div class='moviebuttons'><span data-movieid="+data.results[index].id+">Add to Coming Soon</span></div></div></li>");
 
                         //IF THERE IS A POSTER
                     } else {
 
-                        $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='movieinfo'><img src=http://image.tmdb.org/t/p/w185/"+data.results[index].poster_path+"><span class='overview'>"+data.results[index].overview+"</span><div class='moviebuttons'><span>Add to Coming Soon</span></div></div></li>");
+                        $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='movieinfo'><img src=http://image.tmdb.org/t/p/w185/"+data.results[index].poster_path+"><span class='overview'>"+data.results[index].overview+"</span><div class='moviebuttons'><span data-movieid="+data.results[index].id+">Add to Coming Soon</span></div></div></li>");
                         
                     };
 
@@ -69,12 +69,12 @@ $( document ).ready(function() {
                             //IF THERE IS NO POSTER
                             if ( data.results[index].poster_path == null ) {
 
-                                $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='movieinfo'><img src='images/film-icon.jpg'><span class='overview'>"+data.results[index].overview+"</span><div class='moviebuttons'><span>Add to Coming Soon</span></div></div></li>");
+                                $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='movieinfo'><img src='images/film-icon.jpg'><span class='overview'>"+data.results[index].overview+"</span><div class='moviebuttons'><span data-movieid="+data.results[index].id+">Add to Coming Soon</span></div></div></li>");
 
                                 //IF THERE IS A POSTER
                             } else {
 
-                                $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='movieinfo'><img src=http://image.tmdb.org/t/p/w185/"+data.results[index].poster_path+"><span class='overview'>"+data.results[index].overview+"</span><div class='moviebuttons'><span>Add to Coming Soon</span></div></div></li>");
+                                $("#results").append("<li><h2>"+data.results[index].title+"</h2><div class='movieinfo'><img src=http://image.tmdb.org/t/p/w185/"+data.results[index].poster_path+"><span class='overview'>"+data.results[index].overview+"</span><div class='moviebuttons'><span data-movieid="+data.results[index].id+">Add to Coming Soon</span></div></div></li>");
 
                             }
 
