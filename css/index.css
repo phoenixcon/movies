@@ -67,6 +67,39 @@ form {
 form input {
     display: block;
     margin: 10px auto 0;
+    box-sizing: border-box;
+}
+
+form #search {
+    background-color: rgba(232,232,232,0.3);
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    font-size: 2em;
+    text-align: center;
+}
+
+form #search:hover {
+    background-color: rgba(232,232,232,0.4);
+}
+
+form #search:active, form #search:focus {
+    background-color: rgba(232,232,232,0.6);
+}
+
+form #submit {
+    background-color: rgba(232,232,232,0.7);
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+    height: 30px;
+    font-size: 1.5em;
+}
+
+form #submit:hover {
+    background-color: rgba(232,232,232,0.9);   
 }
 
 #results {
@@ -128,7 +161,7 @@ div.noimage {
     #results li:nth-child(4n) {
         margin-right: 1%;
     }
-    
+
     #results li:nth-child(3n) {
         margin-right: 0;
     }
@@ -137,7 +170,7 @@ div.noimage {
 
 @media only screen and (max-device-width: 800px){
     /* styles for browsers smaller than 800px; */
-    
+
     #results {
         width: 80%;
     }
@@ -146,21 +179,21 @@ div.noimage {
         width: 49.5%;
         margin-bottom: 40px;
     }
-    
+
     #results li:nth-child(3n) {
         margin-right: 1%;
     }
-    
+
     #results li:nth-child(2n) {
         margin-right: 0;
     }
-    
+
 
 }
 
 @media only screen and (max-device-width: 550px){
     /* styles for browsers smaller than 800px; */
-    
+
     #results {
         width: 90%;
     }
@@ -170,7 +203,11 @@ div.noimage {
         margin-bottom: 40px;
         margin-right: 0;
     }
-    
+
+    form {
+        width: 75%;
+    }
+
 }
 
 /* ----- End Media Queries ----- */
