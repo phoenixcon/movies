@@ -64,7 +64,7 @@ form {
     margin: 50px auto;
 }
 
-form input {
+form input, form button {
     display: block;
     margin: 10px auto 0;
     box-sizing: border-box;
