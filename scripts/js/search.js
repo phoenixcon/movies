@@ -12,7 +12,7 @@ $( document ).ready(function() {
 
         //GET API OBJECT
         $.get( apicomplete, function(data) {
-            
+
             $("#results").empty();
 
             //console.log(apicomplete);
