@@ -112,10 +112,15 @@ form #submit:hover {
     display: inline-block;
     width: 22%;
     margin: 0 4% 20px 0;
+    position: relative;
 }
 
 #results li:nth-child(4n) {
     margin-right: 0;
+}
+
+#results li img {
+    width: 100%;
 }
 
 div.noimage {
@@ -123,6 +128,60 @@ div.noimage {
     height: 277px;
     background-color: #b5b5b5;
     display: inline-block;
+}
+
+.movieinfo {
+    position: relative;
+    overflow: hidden;
+}
+
+.movieinfo:hover .overview, .movieinfo:hover div {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.overview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    height: 89%;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(0,0,0,0.7);
+    width: 100.5%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.moviebuttons {
+    height: 11%;
+    position: absolute;
+    top: 89%;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.moviebuttons span {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(24,134,45,1.0);
+    display: block;
+    line-height: 30px;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.moviebuttons span:hover {
+    background-color: rgba(26,102,46,1.0);
 }
 
 /* ----- End Custom Styles----- */
@@ -187,7 +246,7 @@ div.noimage {
     #results li:nth-child(2n) {
         margin-right: 0;
     }
-    
+
     form #submit {
         width: 70%;
     }
@@ -210,6 +269,50 @@ div.noimage {
 
     form {
         width: 75%;
+    }
+
+    .overview {
+        position: relative;
+        padding: 0;
+        height: inherit;
+        box-sizing: border-box;
+        overflow-y: visible;
+        overflow-x: visible;
+        background-color: inherit;
+        width: inherit;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 10px;
+        display: block;
+
+    }
+
+
+    .moviebuttons {
+        height: inherit;
+        position: relative;
+        top: 0;
+        background-color: inherit;
+        width: inherit;
+        visibility: visible;
+        opacity: 1;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .moviebuttons span {
+        width: 100%;
+        height: 30px;
+        background-color: rgba(24,134,45,1.0);
+        display: block;
+        line-height: 30px;
+        position: relative;
+        bottom: 0;
+        cursor: pointer;
+    }
+
+    .moviebuttons span:hover {
+        background-color: rgba(26,102,46,1.0);
     }
 
 }
