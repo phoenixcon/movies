@@ -4,10 +4,10 @@ $errors         = array(); //array for errors
 $data           = array(); //array for data - JSON
 
 if (substr($urlhost, 0, strlen($urlhost)) === $local) {
-        include 'apiconfig.php';
-    } else {
-        include '../../../../connection/apiconfig.php';
-    }
+    include 'apiconfig.php';
+} else {
+    include '../../../../connection/apiconfig.php';
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Set some options - we are passing in a useragent too here
     curl_setopt_array($curl, array(
         CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_URL => 'https://api.themoviedb.org/3/search/movie?language=en-US&include_adult=false&api_key=01ab4cd35c6da005a7c0fc4ffcccd892&query='.$searchvalue,
+        CURLOPT_URL => 'https://api.themoviedb.org/3/search/movie?language=en-US&include_adult=false&api_key='.$apikey.'&query='.$searchvalue,
         //CURLOPT_USERAGENT => 'Codular Sample cURL Request'
-    ));
+        ));
     // Send the request & save response to $resp
     $result = curl_exec($curl);
     // Close request to clear up some resources
