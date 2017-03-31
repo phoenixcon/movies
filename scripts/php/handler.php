@@ -9,6 +9,8 @@ if (substr($urlhost, 0, strlen($urlhost)) === $local) {
     include '../../../../connection/apiconfig.php';
 }
 
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $searchvalue    = $_POST['searchvalue'];
