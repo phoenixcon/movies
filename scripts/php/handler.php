@@ -3,6 +3,12 @@
 $errors         = array(); //array for errors
 $data           = array(); //array for data - JSON
 
+if (substr($urlhost, 0, strlen($urlhost)) === $local) {
+        include 'apiconfig.php';
+    } else {
+        include '../../../../connection/apiconfig.php';
+    }
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $searchvalue    = $_POST['searchvalue'];
