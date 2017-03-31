@@ -9,9 +9,27 @@ $( document ).ready(function() {
         var baseapiurl = 'https://api.themoviedb.org/3/search/movie?language=en-US&include_adult=false&api_key='+mykey;
         var apisearchtitle = '&query='+movietitle;
         var apicomplete = baseapiurl+apisearchtitle;
+        
+        var movierequestdata = "searchvalue="+movietitle;
+        
+        $.ajax({
+            type     : 'POST',
+            url      : 'scripts/php/handler.php',
+            data     : movierequestdata,
+            dataType : 'json',
+            encode   : true
+        })
+
+            .done (function(data) {
+
+            console.log(data);
+
+        });
+        
+        
 
         //GET API OBJECT
-        $.get( apicomplete, function(data) {
+        /*$.get( apicomplete, function(data) {
 
             $("#results").empty();
 
@@ -97,37 +115,37 @@ $( document ).ready(function() {
 
             }
 
+        });*/
+
+    });
+
+    $('#results').on('click', '.moviebuttons span', function(){
+        var movieid = $(this).data('movieid');
+        var posterpath = $(this).data('posterpath');
+        var title = $(this).data('movietitle');
+        var overview = $(this).data('overview');
+        console.log(movieid);
+        console.log(title);
+        console.log(posterpath);
+        console.log(overview);
+
+        var submitstring = "movieid="+movieid+"&movietitle="+title+"&posterpath="+posterpath+"&overview="+overview;
+
+        console.log(submitstring);
+
+        $.ajax({
+            type     : 'POST',
+            url      : 'scripts/php/handler.php',
+            data     : submitstring,
+            dataType : 'json',
+            encode   : true
+        })
+
+            .done (function(data) {
+
+            console.log(data);
+
         });
-
-        $('#results').on('click', '.moviebuttons span', function(){
-            var movieid = $(this).data('movieid');
-            var posterpath = $(this).data('posterpath');
-            var title = $(this).data('movietitle');
-            var overview = $(this).data('overview');
-            console.log(movieid);
-            console.log(title);
-            console.log(posterpath);
-            console.log(overview);
-
-            var submitstring = "movieid="+movieid+"&movietitle="+title+"&posterpath="+posterpath+"&overview="+overview;
-            
-            console.log(submitstring);
-
-            $.ajax({
-                type     : 'POST',
-                url      : 'scripts/php/handler.php',
-                data     : submitstring,
-                dataType : 'json',
-                encode   : true
-            })
-
-                .done (function(data) {
-
-                console.log(data);
-
-            });
-        });
-
     });
 
 });
