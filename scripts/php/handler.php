@@ -3,18 +3,11 @@
 $errors         = array(); //array for errors
 $data           = array(); //array for data - JSON
 
-if (substr($urlhost, 0, strlen($urlhost)) === $local) {
-    include 'apiconfig.php';
-} else {
-    include '../../../../connection/apiconfig.php';
-}
-
-
+include 'apiconfig.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $searchvalue    = $_POST['searchvalue'];
-
+    $searchvalue         = $_POST['searchvalue'];
     $data['searchvalue'] = $searchvalue;
 
     // Get cURL resource
@@ -30,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Close request to clear up some resources
     curl_close($curl);
     
-    $data['results'] = json_decode($result, true);
+    $data['results']   = json_decode($result, true);
+    $data['searchurl'] = 'https://api.themoviedb.org/3/search/movie?language=en-US&include_adult=false&api_key='.$apikey.'&query='.$searchvalue;
 
 
 

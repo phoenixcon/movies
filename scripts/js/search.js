@@ -6,11 +6,9 @@ $( document ).ready(function() {
 
         var mykey = config.themoviedb;
         var movietitle = document.getElementById('search').value;
-        var baseapiurl = 'https://api.themoviedb.org/3/search/movie?language=en-US&include_adult=false&api_key='+mykey;
-        var apisearchtitle = '&query='+movietitle;
-        var apicomplete = baseapiurl+apisearchtitle;
+        var urlmovietitle = encodeURIComponent(movietitle.trim());
         
-        var movierequestdata = "searchvalue="+movietitle;
+        var movierequestdata = "searchvalue="+urlmovietitle;
         
         $.ajax({
             type     : 'POST',
